@@ -1,0 +1,8 @@
+//
+// Created by matxin on 20/09/23.
+//
+
+#ifndef SCIENTIFICCOMPUTING_SINE_H
+#define SCIENTIFICCOMPUTING_SINE_H
+
+#endif //SCIENTIFICCOMPUTING_SINE_H

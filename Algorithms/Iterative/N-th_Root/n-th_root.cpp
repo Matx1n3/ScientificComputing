@@ -25,6 +25,6 @@ double n_root(double a, int n){
         x = (x * (n-1) + (a / pow(x, (n-1))))/ (double) n;  //Compute the new value for x
     }
 
-    //Once here, the error is smaller than wanted, so it's a good enough approximation
+    //Once here, the error is smaller than wanted, so it's considered a good enough approximation
     return x;
 }

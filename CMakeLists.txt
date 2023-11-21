@@ -24,4 +24,7 @@ add_executable(ScientificComputing main.cpp
         Models/Matrix.cpp
         Models/Matrix.h
         Exceptions/IndexOutOfBoundsException.h
+        Algorithms/Direct/Power/power.cpp
+        Algorithms/Direct/Power/power.h
+        Exceptions/MatrixDimensionException.h
 )

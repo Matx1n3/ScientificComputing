@@ -13,8 +13,12 @@ public:
     void print();
     int getRows() const;
     int getColumns() const;
-    double get(int i, int j);
+    double get(int i, int j) const;
     void set(double val, int i, int j);
+    Matrix operator+(const Matrix& other) const;
+    Matrix operator-(const Matrix& other) const;
+    Matrix operator*(const Matrix& other) const;
+    Matrix operator*(const double& other) const;
 
 private:
     double *values;

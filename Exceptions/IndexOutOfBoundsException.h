@@ -10,7 +10,7 @@
 
 class IndexOutOfBoundsException : public std::out_of_range {
 public:
-    IndexOutOfBoundsException(const std::string& message)
+    explicit IndexOutOfBoundsException(const std::string& message)
         : std::out_of_range(message) {}
 };
 

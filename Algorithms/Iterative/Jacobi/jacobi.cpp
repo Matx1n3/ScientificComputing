@@ -3,9 +3,10 @@
 //
 
 #include "jacobi.h"
-#include <stdio.h>
+//#include <stdio.h>
 #include "/home/matxin/WorkSpace/Uni/3ero/CC/ScientificComputing/Utils/utils.h"
-#include "../../../Models/Matrix.h"
+//#include "../../../Models/Matrix.h"
+#include "/home/matxin/WorkSpace/Uni/3ero/CC/ScientificComputing/Algorithms/Direct/Power/power.h"
 
 /**
  *
@@ -17,8 +18,9 @@
  * pre: The coefficient Matrix is strictly dominant diagonal, otherwise, the algorithm may not converge and will
  *      stay in a loop until manually stopped.
  */
+double* aproximate_solution_jacobi(Matrix* expanded_matrix, Matrix* sol, int precision){
 
-double* aproximate_solution_jacobi(Matrix* expanded_matrix, Matrix* sol, double tolerance){
+    double tolerance = 0.5 * power(2, -precision);
 
     Matrix t = Matrix(expanded_matrix->getRows(), expanded_matrix->getColumns()-1);
 
@@ -44,7 +46,7 @@ double* aproximate_solution_jacobi(Matrix* expanded_matrix, Matrix* sol, double 
 
     //  Para probar, mejorar aproximacion inicial luego
     for (int i = 0; i < expanded_matrix->getRows(); i++){
-        x.set(1, i, 0);
+        x.set(c.get(i, 0), i, 0);
     }
 
     double aux;
@@ -86,7 +88,9 @@ double* aproximate_solution_jacobi(Matrix* expanded_matrix, Matrix* sol, double 
  *      stay in a loop until manually stopped.
  */
 
-double* aproximate_solution_jacobi(Matrix* expanded_matrix, Matrix* sol, double tolerance, int max_iterations){
+double* aproximate_solution_jacobi(Matrix* expanded_matrix, Matrix* sol, int precision, int max_iterations){
+
+    double tolerance = 0.5 * power(2, -precision);
 
     Matrix t = Matrix(expanded_matrix->getRows(), expanded_matrix->getColumns()-1);
 
